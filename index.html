@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blueberry Notes - Papelería online</title>
+    <meta
+      name="description"
+      content="Blueberry Notes: papelería online minimalista e inspiradora. Cuadernos, planners, pegatinas y accesorios con diseño moderno."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#principal">Saltar al contenido</a>
+
+    <header class="site-header" data-menu-open="false">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Blueberry Notes - Inicio">
+          <img src="img/logo.png" alt="Blueberry Notes" class="brand-logo" />
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Abrir menú</span>
+          <span aria-hidden="true" class="menu-icon">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+          <ul class="nav-list">
+            <li>
+              <a class="nav-link" href="#inicio">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#colecciones">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Colecciones</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#planificadores">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M7 2v3M17 2v3M4 7h16M5 5h14a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 11h3M13 11h3M8 15h3M13 15h3"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Planificadores</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#pegatinas">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M20.59 13.41 11 3H4v7l9.59 9.59a2 2 0 0 0 2.83 0l4.17-4.17a2 2 0 0 0 0-2.83Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M7.5 7.5h.01"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Pegatinas</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#accesorios">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M12 20h9"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4 11.5-11.5Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Accesorios</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="#blog">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M4 19a2 2 0 0 0 2 2h14V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 9h8M8 13h6"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Blog</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link cart-link" href="#carrito">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M6 6h15l-1.5 9H7.5L6 6Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6 6 5 3H2"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM17 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Carrito</span>
+                <span
+                  id="cartCount"
+                  class="badge"
+                  aria-label="Productos en el carrito"
+                >
+                  0
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <a class="cta-button" href="#productos">Ver Nueva Colección</a>
+        </nav>
+      </div>
+
+      <div class="menu-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="principal">
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <h1>Tranquilidad, creatividad y organización en cada página.</h1>
+            <p>
+              Descubre cuadernos, planners y accesorios con diseños modernos inspirados en
+              tonos de azul: confianza, calma y mucha creatividad.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#productos">Explorar productos</a>
+              <a class="ghost-button" href="#quienes-somos">Conoce Blueberry Notes</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="float-card float-1"></div>
+            <div class="float-card float-2"></div>
+            <div class="float-card float-3"></div>
+            <div class="visual-surface">
+              <div class="visual-title">Blueberry Notes</div>
+              <div class="visual-subtitle">Papelería online</div>
+              <div class="visual-stars"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="identidad" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Identidad de Marca</h2>
+            <p>Una experiencia única, innovadora y llena de color.</p>
+          </div>
+
+          <div class="grid-2">
+            <article class="panel reveal">
+              <h3>Visión</h3>
+              <p>
+                Ser la papelería online favorita de quienes buscan inspiración y creatividad,
+                ofreciendo productos que hagan de cada proyecto, tarea o momento de escritura
+                una experiencia única, innovadora y llena de color.
+              </p>
+            </article>
+            <article class="panel reveal">
+              <h3>Misión</h3>
+              <p>
+                Brindar artículos de papelería de calidad, prácticos y con diseño moderno, que
+                acompañen a nuestros clientes en su día a día creativo, facilitando la
+                organización, expresión y diversión en cada detalle.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="quienes-somos" class="section section-plain">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Quiénes Somos</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p>
+              Somos una papelería digital comprometida con la creatividad y el estilo. Nos
+              apasiona ofrecer productos que inspiren, ayuden a organizar y aporten un toque
+              único a cada espacio de trabajo o estudio. Nuestro enfoque es práctico, moderno y
+              cercano a nuestros clientes.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="que-vendemos" class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Qué Vendemos</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p>
+              Ofrecemos artículos de papelería cuidadosamente seleccionados: cuadernos,
+              agendas, planners, bolígrafos, lápices, accesorios de escritorio y material
+              creativo, todos con diseños modernos y colores que inspiran, especialmente tonos de
+              azul que transmiten tranquilidad, confianza y creatividad.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="historia" class="section section-plain">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Historia de la Empresa</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p>
+              Blueberry Notes nació como la idea de cuatro estudiantes de Comercio Internacional y
+              Aduanas (CIA) en la EAV. Entre clases, tareas y proyectos, descubrimos que
+              necesitábamos una forma de organizarnos que también nos inspirara.
+            </p>
+            <p>
+              Así surgió nuestra papelería online: un espacio con productos útiles, modernos y
+              estéticos, pensados para transmitir tranquilidad, confianza y creatividad. Por eso
+              elegimos el azul como nuestro color distintivo.
+            </p>
+            <p>
+              Cada una aportó su talento en diseño, selección de productos e identidad de marca.
+              Con esfuerzo y trabajo en equipo, construimos Blueberry Notes, una plataforma para
+              estudiantes y amantes de la papelería.
+            </p>
+            <p>
+              Hoy somos más que una tienda: somos un proyecto que refleja nuestra pasión y el deseo
+              de inspirar a otros a organizar su vida con estilo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="productos" class="section products">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Productos</h2>
+            <p>Tarjetas listas para comprar (con animación sutil al agregar al carrito).</p>
+          </div>
+
+          <div class="catalog" id="catalog"></div>
+        </div>
+      </section>
+
+      <section id="carrito" class="section section-plain">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Carrito</h2>
+            <p>
+              Tu selección se mostrará aquí. Agrega productos desde el catálogo para
+              mantener tu experiencia simple y clara.
+            </p>
+          </div>
+
+          <div class="panel panel-wide reveal">
+            <p id="cartSummary" class="muted">
+              Tu carrito está vacío. Agrega productos para comenzar.
+            </p>
+            <div class="cart-cta">
+              <a class="ghost-button" href="#productos">Volver al catálogo</a>
+              <a class="primary-button" href="#politica">Ver Envíos</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="section section-compact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Blog</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p class="muted">
+              Historias cortas, ideas de organización y tips para que tu rutina creativa fluya. En
+              cada publicación mezclamos práctica y estética con colores suaves.
+            </p>
+            <div class="grid-2 cards-row" aria-label="Entradas destacadas del blog">
+              <article class="mini-card">
+                <h3>Organización con color</h3>
+                <p class="muted">
+                  Cómo usar tonos pastel para separar tareas, metas y recordatorios sin
+                  saturar tu espacio.
+                </p>
+              </article>
+              <article class="mini-card">
+                <h3>Rutina de escritura</h3>
+                <p class="muted">
+                  Mini rituales para escribir con intención: menos fricción, más inspiración.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="colecciones" class="section section-compact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Colecciones</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p class="muted">
+              Conjuntos pensados para organizarte y disfrutar el proceso. Cada colección nace del
+              azul #A7D3F5, con lavanda, rosa suave y blanco para transmitir calma, confianza y
+              creatividad.
+            </p>
+            <div class="grid-2 cards-row" aria-label="Ejemplos de colecciones">
+              <article class="mini-card">
+                <h3>Set “Cielo Estrellado”</h3>
+                <p class="muted">Brillo suave para ideas creativas y notas motivadoras.</p>
+              </article>
+              <article class="mini-card">
+                <h3>Set “Arándanos Dulces”</h3>
+                <p class="muted">Libretas y cintas decorativas para organizar con encanto.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="planificadores" class="section section-compact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Planificadores</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p class="muted">
+              Planifica tu semana con estructura y color. Nuestros planners semanales incluyen
+              espacios para tareas, metas y notas para que no pierdas el hilo.
+            </p>
+            <div class="grid-2 cards-row" aria-label="Tipos de planificadores">
+              <article class="mini-card">
+                <h3>Planner Semanal</h3>
+                <p class="muted">Secciones por día con resumen de objetivos al inicio.</p>
+              </article>
+              <article class="mini-card">
+                <h3>Planner Estudio</h3>
+                <p class="muted">Para clases, proyectos y entregas con enfoque.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pegatinas" class="section section-compact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Pegatinas</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p class="muted">
+              Marca tu progreso y mejora tu lectura visual. Pegatinas ideales para resaltar
+              fechas, prioridades y recordatorios con un toque tierno.
+            </p>
+            <div class="grid-2 cards-row" aria-label="Ejemplos de pegatinas">
+              <article class="mini-card">
+                <h3>Sticker “Ideas”</h3>
+                <p class="muted">Íconos pequeños para ideas rápidas y listas cortas.</p>
+              </article>
+              <article class="mini-card">
+                <h3>Sticker “Fechas”</h3>
+                <p class="muted">Etiquetas suaves para lo importante de cada semana.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="accesorios" class="section section-compact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Accesorios</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p class="muted">
+              Accesorios para que tu estación de escritura se sienta ordenada y lista para crear.
+              Soportes, organizadores y detalles que suman funcionalidad sin perder el estilo.
+            </p>
+            <div class="grid-2 cards-row" aria-label="Ejemplos de accesorios">
+              <article class="mini-card">
+                <h3>Organizador de Escritorio</h3>
+                <p class="muted">Todo a mano: lápices, plumones y libretas en un solo lugar.</p>
+              </article>
+              <article class="mini-card">
+                <h3>Caja Creativa</h3>
+                <p class="muted">Para guardar cintas, stickers y accesorios pequeños.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="politica" class="section section-compact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Política de Envío</h2>
+          </div>
+          <div class="panel panel-wide reveal">
+            <p class="muted">
+              Esta sección es una guía. Cuando conectes el sitio con tu backend/operador de envíos,
+              aquí puedes indicar tiempos de entrega, costos y condiciones.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-title">Contacto</div>
+          <div class="footer-social">
+            <a
+              class="social-link"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" class="social-icon" aria-hidden="true">
+                <path
+                  d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Z"
+                />
+                <path
+                  d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"
+                />
+                <path d="M17.7 6.3a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0Z" />
+              </svg>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://wa.me/0000000000"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+            >
+              <svg viewBox="0 0 24 24" class="social-icon" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.7.8-2.8-.2-.3A8 8 0 1 1 12 20Z"
+                />
+                <path
+                  d="M16.6 14.7c-.2-.1-1-.5-1.1-.5-.2-.1-.3-.1-.4.1l-.5.6c-.1.2-.3.2-.5.1-1-.5-1.7-1.1-2.3-2.1-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3 0-.4l-.5-1.2c-.1-.2-.2-.3-.4-.2h-.4c-.2 0-.4.1-.5.3-.2.2-.7.6-.7 1.5s.7 1.7.8 1.8c.1.1 1.4 2.1 3.5 2.9 2.1.8 2.1.5 2.5.4.4-.1 1.3-.5 1.5-1.1.2-.6.2-1.2.1-1.2 0 0-.2-.1-.4-.2Z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-brand">
+            <img src="img/logo.png" alt="Blueberry Notes" class="footer-logo" />
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-title">Enlaces</div>
+          <div class="footer-links">
+            <a class="footer-link" href="#quienes-somos">Sobre Nosotros</a>
+            <a class="footer-link" href="#politica">Política de Envío</a>
+            <a class="footer-link" href="#contacto">Contacto</a>
+          </div>
+          <div class="muted footer-copy">
+            © <span id="year"></span> Blueberry Notes. Todos los derechos reservados.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      Producto agregado al carrito
+    </div>
+
+    <script>
+      const $ = (sel) => document.querySelector(sel);
+      const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+      // 1) Menú responsive
+      const header = document.querySelector(".site-header");
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.getElementById("site-nav");
+      const backdrop = document.querySelector(".menu-backdrop");
+      const body = document.body;
+      let previousBodyOverflow = "";
+
+      function setMenu(open) {
+        header.dataset.menuOpen = String(open);
+        toggle.setAttribute("aria-expanded", String(open));
+
+        if (open) {
+          previousBodyOverflow = body.style.overflow;
+          body.style.overflow = "hidden";
+          if (backdrop) backdrop.setAttribute("aria-hidden", "false");
+        } else {
+          body.style.overflow = previousBodyOverflow;
+          if (backdrop) backdrop.setAttribute("aria-hidden", "true");
+        }
+      }
+
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          const isOpen = header.dataset.menuOpen === "true";
+          setMenu(!isOpen);
+        });
+
+        if (backdrop) {
+          backdrop.addEventListener("click", () => setMenu(false));
+        }
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && header.dataset.menuOpen === "true") setMenu(false);
+        });
+
+        // Cerrar al hacer scroll o click fuera
+        document.addEventListener("click", (e) => {
+          const isInsideHeader = e.target.closest(".site-header");
+          if (!isInsideHeader && header.dataset.menuOpen === "true") setMenu(false);
+        });
+      }
+
+      // Cierra al navegar por anclas (mejor UX en móvil)
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", () => {
+          if (window.innerWidth <= 900) setMenu(false);
+        });
+      });
+
+      // 2) Render de productos + carrito simple
+      const catalogData = [
+        {
+          id: "libretas",
+          name: "Libretas",
+          products: [
+            {
+              id: "libreta-aurora",
+              name: "Libreta Aurora Pastel",
+              price: 8.0,
+              accent: "#C9B6F5",
+              accent2: "#A7D3F5",
+            },
+            {
+              id: "libreta-cielo-nubes",
+              name: "Libreta Cielo y Nubes",
+              price: 9.0,
+              accent: "#A7D3F5",
+              accent2: "#B7F7E3",
+            },
+            {
+              id: "libreta-arandanos-dulces",
+              name: "Libreta Arándanos Dulces",
+              price: 7.0,
+              accent: "#F7B7D0",
+              accent2: "#C9B6F5",
+            },
+          ],
+        },
+        {
+          id: "cintas",
+          name: "Cintas",
+          products: [
+            {
+              id: "cinta-washi-estrellitas",
+              name: "Cinta Washi Estrellitas",
+              price: 3.0,
+              accent: "#A7D3F5",
+              accent2: "#C9B6F5",
+            },
+            {
+              id: "cinta-washi-arcoiris-azul",
+              name: "Cinta Washi Arcoíris Azul",
+              price: 3.0,
+              accent: "#B7F7E3",
+              accent2: "#A7D3F5",
+            },
+            {
+              id: "cinta-decorativa-nubes",
+              name: "Cinta Decorativa Nubes",
+              price: 4.0,
+              accent: "#F7B7D0",
+              accent2: "#A7D3F5",
+            },
+          ],
+        },
+        {
+          id: "plumones",
+          name: "Plumones",
+          products: [
+            {
+              id: "plumones-suaves",
+              name: "Plumones Suaves (Set 6)",
+              price: 5.0,
+              accent: "#C9B6F5",
+              accent2: "#F7B7D0",
+            },
+            {
+              id: "marcadores-dibujo",
+              name: "Marcadores para Dibujo",
+              price: 6.0,
+              accent: "#A7D3F5",
+              accent2: "#B7F7E3",
+            },
+            {
+              id: "resaltador-pastel",
+              name: "Plumón Resaltador Pastel",
+              price: 4.0,
+              accent: "#F7B7D0",
+              accent2: "#C9B6F5",
+            },
+          ],
+        },
+        {
+          id: "utiles",
+          name: "Útiles",
+          products: [
+            {
+              id: "clips-etiquetas",
+              name: "Set de Clips y Etiquetas",
+              price: 5.0,
+              accent: "#B7F7E3",
+              accent2: "#A7D3F5",
+            },
+            {
+              id: "portaminas-borrador",
+              name: "Portaminas & Borrador",
+              price: 4.0,
+              accent: "#C9B6F5",
+              accent2: "#A7D3F5",
+            },
+            {
+              id: "regla-calculadora-mini",
+              name: "Regla + Calculadora Mini",
+              price: 6.0,
+              accent: "#A7D3F5",
+              accent2: "#F7B7D0",
+            },
+          ],
+        },
+      ];
+
+      function escapeXml(unsafe) {
+        return unsafe
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&apos;");
+      }
+
+      function svgToDataUri(svg) {
+        // UTF-8 + URL encoding para que funcione en HTML sin archivos extra
+        return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+      }
+
+      function productSvg({ accent, accent2, tag, title }) {
+        const t = escapeXml(title);
+        const label = escapeXml(tag);
+        return `
+          <svg xmlns="http://www.w3.org/2000/svg" width="520" height="320" viewBox="0 0 520 320">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="${accent}" stop-opacity="0.95"/>
+                <stop offset="1" stop-color="${accent2}" stop-opacity="0.95"/>
+              </linearGradient>
+              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="10" result="blur"/>
+                <feColorMatrix in="blur" type="matrix"
+                  values="1 0 0 0 0
+                          0 1 0 0 0
+                          0 0 1 0 0
+                          0 0 0 0.25 0"/>
+                <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <rect x="0" y="0" width="520" height="320" rx="28" fill="rgba(255,255,255,0.55)"/>
+            <circle cx="110" cy="80" r="60" fill="${accent}" opacity="0.25" filter="url(#soft)"/>
+            <circle cx="420" cy="60" r="78" fill="${accent2}" opacity="0.20" filter="url(#soft)"/>
+            <circle cx="420" cy="260" r="90" fill="#A7D3F5" opacity="0.15" filter="url(#soft)"/>
+
+            <rect x="120" y="68" width="280" height="210" rx="22" fill="url(#g)" opacity="0.25"/>
+            <rect x="140" y="80" width="240" height="180" rx="18" fill="rgba(255,255,255,0.65)" stroke="rgba(24,50,74,0.12)"/>
+
+            <g opacity="0.9">
+              <rect x="165" y="110" width="190" height="20" rx="10" fill="${accent2}" opacity="0.6"/>
+              <rect x="165" y="140" width="150" height="16" rx="8" fill="${accent}" opacity="0.55"/>
+              <rect x="165" y="165" width="170" height="16" rx="8" fill="${accent2}" opacity="0.45"/>
+            </g>
+
+            <g fill="${accent2}">
+              <path d="M370 95l8 18-18-8 10-10z" opacity="0.45"/>
+              <path d="M145 235l6 14-14-6 8-8z" opacity="0.35"/>
+            </g>
+
+            <text x="260" y="225" text-anchor="middle" font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="22" fill="rgba(24,50,74,0.78)" font-weight="600">
+              ${label}
+            </text>
+
+            <text x="260" y="255" text-anchor="middle" font-family="Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="14" fill="rgba(24,50,74,0.55)" font-weight="400">
+              ${t}
+            </text>
+          </svg>
+        `;
+      }
+
+      const catalog = document.getElementById("catalog");
+      let cartCount = 0;
+
+      function formatPrice(n) {
+        return "$" + n.toFixed(2);
+      }
+
+      function showToast(msg) {
+        const toast = document.getElementById("toast");
+        if (!toast) return;
+        toast.textContent = msg;
+        toast.classList.remove("show");
+        // reflow para reiniciar animación
+        // eslint-disable-next-line no-unused-expressions
+        toast.offsetHeight;
+        toast.classList.add("show");
+        window.clearTimeout(showToast._t);
+        showToast._t = window.setTimeout(() => toast.classList.remove("show"), 2200);
+      }
+
+      function updateCartSummary() {
+        const summary = document.getElementById("cartSummary");
+        const countEl = document.getElementById("cartCount");
+        if (countEl) countEl.textContent = String(cartCount);
+
+        if (!summary) return;
+        if (cartCount === 0) {
+          summary.textContent = "Tu carrito está vacío. Agrega productos para comenzar.";
+          summary.classList.add("muted");
+        } else {
+          summary.textContent = `Tienes ${cartCount} producto${cartCount === 1 ? "" : "s"} en el carrito.`;
+          summary.classList.remove("muted");
+        }
+      }
+
+      function renderCatalog() {
+        if (!catalog) return;
+        catalog.innerHTML = "";
+
+        catalogData.forEach((cat) => {
+          const catBlock = document.createElement("div");
+          catBlock.className = "catalog-category reveal";
+
+          catBlock.innerHTML = `
+            <h3 class="catalog-title">${cat.name}</h3>
+            <div class="product-grid product-grid--category" aria-label="Productos de ${escapeXml(
+              cat.name
+            )}"></div>
+          `;
+
+          const grid = catBlock.querySelector(".product-grid");
+
+          cat.products.forEach((p) => {
+            const imgSrc = svgToDataUri(
+              productSvg({
+                accent: p.accent,
+                accent2: p.accent2,
+                tag: cat.name,
+                title: p.name,
+              })
+            );
+
+            const card = document.createElement("article");
+            card.className = "product-card reveal";
+            card.innerHTML = `
+              <div class="product-media">
+                <img class="product-image" src="${imgSrc}" alt="Imagen de ${escapeXml(p.name)}" loading="lazy" />
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">${p.name}</h3>
+                <div class="product-meta">
+                  <span class="product-price">${formatPrice(p.price)}</span>
+                </div>
+              </div>
+              <div class="product-actions">
+                <button type="button" class="add-to-cart" data-product="${p.id}">
+                  Comprar
+                </button>
+              </div>
+            `;
+
+            card.querySelector(".add-to-cart").addEventListener("click", () => {
+              cartCount += 1;
+              updateCartSummary();
+              showToast("Producto agregado al carrito");
+            });
+
+            grid.appendChild(card);
+          });
+
+          catalog.appendChild(catBlock);
+        });
+      }
+
+      renderCatalog();
+      updateCartSummary();
+
+      // 3) Animación suave al hacer scroll
+      const prefersReducedMotion =
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        $$(".reveal").forEach((el) => obs.observe(el));
+      } else {
+        // Si el usuario pide menos movimiento, mostramos todo
+        $$(".reveal").forEach((el) => el.classList.add("visible"));
+      }
+
+      // 4) Footer year
+      const year = document.getElementById("year");
+      if (year) year.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
+
