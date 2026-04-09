@@ -370,6 +370,10 @@ body {
   padding: 2.4rem 0 3.6rem;
 }
 
+.identity-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.06));
+}
+
 .section-heading {
   margin-bottom: 1.35rem;
 }
@@ -396,6 +400,184 @@ body {
   margin-top: 0.95rem;
 }
 
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.identity-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(24, 50, 74, 0.12);
+  padding: 1.3rem 1.2rem;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.identity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(24, 50, 74, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.identity-icon {
+  width: 74px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin: 0 auto 0.85rem;
+  color: rgba(23, 50, 74, 0.88);
+  background: linear-gradient(135deg, rgba(201, 182, 245, 0.26), rgba(167, 211, 245, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 10px 20px rgba(24, 50, 74, 0.12);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.flaticon-animated {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+  transform-origin: center;
+  animation: iconFloat 3.2s ease-in-out infinite;
+}
+
+.identity-card:hover .identity-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 22px rgba(24, 50, 74, 0.15);
+}
+
+.identity-card:hover .flaticon-animated {
+  animation-duration: 2.4s;
+}
+
+.identity-card h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.95rem;
+  letter-spacing: -0.01em;
+}
+
+.identity-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+  font-size: 1.03rem;
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.what-card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 1.1rem 1rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.what-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(24, 50, 74, 0.15);
+  background: rgba(255, 255, 255, 0.93);
+}
+
+.what-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(23, 50, 74, 0.88);
+  background: linear-gradient(135deg, rgba(201, 182, 245, 0.3), rgba(167, 211, 245, 0.24));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  margin-bottom: 0.72rem;
+}
+
+.what-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.what-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.what-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.story-card {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 1rem 0.95rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(24, 50, 74, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.story-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(23, 50, 74, 0.88);
+  background: linear-gradient(135deg, rgba(167, 211, 245, 0.32), rgba(247, 183, 208, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  margin-bottom: 0.68rem;
+}
+
+.story-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.story-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+
+.story-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
+}
+
 .panel {
   background: var(--surface);
   border: 1px solid rgba(255, 255, 255, 0.65);
@@ -418,6 +600,44 @@ body {
 
 .panel-wide {
   padding: 1.6rem;
+}
+
+.policy-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.policy-block {
+  background: rgba(255, 255, 255, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  border-radius: 14px;
+  padding: 1rem 1rem 0.95rem;
+}
+
+.policy-block h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+  color: rgba(23, 50, 74, 0.9);
+}
+
+.policy-block p {
+  margin: 0;
+}
+
+.policy-block ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.policy-note {
+  background: linear-gradient(135deg, rgba(201, 182, 245, 0.35), rgba(255, 255, 255, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  margin-top: 0.1rem;
+  font-weight: 500;
 }
 
 .mini-card {
@@ -512,10 +732,13 @@ body {
 
 .product-image {
   width: 100%;
-  height: 140px;
+  height: 150px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center;
   border-radius: 14px;
   border: 1px solid rgba(23, 50, 74, 0.08);
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .product-body {
@@ -699,6 +922,13 @@ body {
   .grid-2 {
     grid-template-columns: 1fr;
   }
+  .identity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .what-grid,
+  .story-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .footer-inner {
     grid-template-columns: 1fr;
   }
@@ -729,6 +959,38 @@ body {
 
   .product-image {
     height: 120px;
+  }
+
+  .identity-grid {
+    grid-template-columns: 1fr;
+  }
+  .what-grid,
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identity-card {
+    padding: 1.1rem 1rem;
+  }
+
+  .identity-card h3 {
+    font-size: 1.65rem;
+  }
+
+  .identity-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.72rem;
+  }
+
+  .flaticon-animated {
+    width: 44px;
+    height: 44px;
+  }
+
+  .what-card,
+  .story-card {
+    padding: 1rem 0.92rem;
   }
 }
 
@@ -850,6 +1112,9 @@ body {
   }
   .toast {
     transition: none;
+  }
+  .flaticon-animated {
+    animation: none;
   }
   * {
     transition-duration: 0ms !important;
