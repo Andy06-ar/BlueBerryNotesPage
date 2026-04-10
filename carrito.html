@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrito — Blueberry Notes</title>
+    <meta
+      name="description"
+      content="Revisa tu carrito en Blueberry Notes: cuadernos, planners y papelería con diseño pastel."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#principal">Saltar al contenido</a>
+
+    <header class="site-header" data-menu-open="false">
+      <div class="container header-inner">
+        <a class="brand" href="index.html#inicio" aria-label="Blueberry Notes - Inicio">
+          <img src="img/logo.png" alt="Blueberry Notes" class="brand-logo" />
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Abrir menú</span>
+          <span aria-hidden="true" class="menu-icon">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+          <ul class="nav-list">
+            <li>
+              <a class="nav-link" href="index.html#inicio">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Inicio</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="index.html#colecciones">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Colecciones</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" href="index.html#politicas">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M7 3h10a2 2 0 0 1 2 2v15l-7-3-7 3V5a2 2 0 0 1 2-2Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 8h6M9 11h6"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Políticas de Devolución y Cambios</span>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link cart-link" href="carrito.html" aria-current="page">
+                <span class="nav-ico" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20">
+                    <path
+                      d="M6 6h15l-1.5 9H7.5L6 6Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M6 6 5 3H2"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM17 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span class="nav-label">Carrito</span>
+                <span id="cartCount" class="badge" aria-label="Productos en el carrito">0</span>
+              </a>
+            </li>
+          </ul>
+
+          <a class="cta-button" href="index.html#productos">Ver Nueva Colección</a>
+        </nav>
+      </div>
+
+      <div class="menu-backdrop" aria-hidden="true"></div>
+    </header>
+
+    <main id="principal" class="section section-plain">
+      <div class="container">
+        <div class="section-heading reveal visible">
+          <h1>Tu carrito</h1>
+          <p>
+            Aquí ves cada producto con su imagen y precio. Puedes quitar líneas antes de pagar. Los
+            métodos de pago disponibles aparecen abajo.
+          </p>
+        </div>
+
+        <div class="cart-page-layout">
+          <div class="panel panel-wide reveal visible">
+            <div id="cartPageItems" class="cart-items-wrap"></div>
+          </div>
+          <aside id="cartPageAside" class="cart-page-aside reveal visible">
+            <div class="panel">
+              <h2 class="cart-aside-title">Resumen</h2>
+              <p class="muted cart-aside-count">
+                <span id="cartPageCount">0</span>
+                <span id="cartPageCountLabel"> artículos</span>
+              </p>
+              <div class="cart-total-line cart-total-line--page">
+                <span>Total</span>
+                <strong id="cartPageTotal">$0.00</strong>
+              </div>
+              <div class="cart-page-actions">
+                <a class="primary-button" href="index.html#productos">Seguir comprando</a>
+                <a class="ghost-button" href="index.html#politicas">Políticas</a>
+              </div>
+            </div>
+            <div class="payment-methods payment-methods--footer" aria-label="Métodos de pago">
+              <div class="payment-methods-title">Métodos de pago</div>
+              <p class="payment-methods-desc muted">
+                Tarjetas de crédito y débito, PayPal y transferencias bancarias.
+              </p>
+              <div class="payment-icons">
+                <span class="payment-chip" title="Tarjetas">
+                  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <rect
+                      x="2"
+                      y="5"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path d="M2 9h20" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+                <span class="payment-chip" title="PayPal">
+                  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path
+                      d="M7 19h3l1-5h2.5c3 0 5.5-1.5 6-4 .5-2.5-1-4.5-4.5-4.5H9l-2 13z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="payment-chip" title="Transferencia">
+                  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                    <path
+                      d="M4 10h16v8H4zM4 10l8-5 8 5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer" id="contacto">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <div class="footer-title">Contacto</div>
+          <div class="footer-social">
+            <a
+              class="social-link"
+              href="https://www.instagram.com/peafrappes?igsh=OGxmOW5taTl3aTdh&utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" class="social-icon" aria-hidden="true">
+                <path
+                  d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Z"
+                />
+                <path
+                  d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"
+                />
+                <path d="M17.7 6.3a1.1 1.1 0 1 0-2.2 0 1.1 1.1 0 0 0 2.2 0Z" />
+              </svg>
+            </a>
+
+            <a
+              class="social-link"
+              href="https://whatsapp.com/channel/0029VbBlfeY1dAw85H0HjB1W"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+            >
+              <svg viewBox="0 0 24 24" class="social-icon" aria-hidden="true">
+                <path
+                  d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.7.8-2.8-.2-.3A8 8 0 1 1 12 20Z"
+                />
+                <path
+                  d="M16.6 14.7c-.2-.1-1-.5-1.1-.5-.2-.1-.3-.1-.4.1l-.5.6c-.1.2-.3.2-.5.1-1-.5-1.7-1.1-2.3-2.1-.1-.2 0-.3.1-.4l.4-.5c.1-.2.1-.3 0-.4l-.5-1.2c-.1-.2-.2-.3-.4-.2h-.4c-.2 0-.4.1-.5.3-.2.2-.7.6-.7 1.5s.7 1.7.8 1.8c.1.1 1.4 2.1 3.5 2.9 2.1.8 2.1.5 2.5.4.4-.1 1.3-.5 1.5-1.1.2-.6.2-1.2.1-1.2 0 0-.2-.1-.4-.2Z"
+                />
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-brand">
+            <img src="img/logo.png" alt="Blueberry Notes" class="footer-logo" />
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="footer-title">Enlaces</div>
+          <div class="footer-links">
+            <a class="footer-link" href="index.html#quienes-somos">Sobre Nosotros</a>
+            <a class="footer-link" href="index.html#politicas">Políticas de Devolución y Cambios</a>
+            <a class="footer-link" href="carrito.html">Carrito</a>
+            <a class="footer-link" href="index.html#contacto">Contacto</a>
+          </div>
+          <div class="payment-methods payment-methods--footer" aria-label="Métodos de pago">
+            <div class="payment-methods-title">Métodos de pago</div>
+            <p class="payment-methods-desc muted">
+              Aceptamos tarjetas de crédito y débito, PayPal y transferencias bancarias.
+            </p>
+            <div class="payment-icons">
+              <span class="payment-chip" title="Tarjetas">
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <rect
+                    x="2"
+                    y="5"
+                    width="20"
+                    height="14"
+                    rx="2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  />
+                  <path d="M2 9h20" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </span>
+              <span class="payment-chip" title="PayPal">
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path
+                    d="M7 19h3l1-5h2.5c3 0 5.5-1.5 6-4 .5-2.5-1-4.5-4.5-4.5H9l-2 13z"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="payment-chip" title="Transferencia">
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <path
+                    d="M4 10h16v8H4zM4 10l8-5 8 5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="muted footer-copy">
+            © <span id="year"></span> Blueberry Notes. Todos los derechos reservados.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script>
+      const $ = (sel) => document.querySelector(sel);
+      const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+      const header = document.querySelector(".site-header");
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.getElementById("site-nav");
+      const backdrop = document.querySelector(".menu-backdrop");
+      const body = document.body;
+      let previousBodyOverflow = "";
+
+      function setMenu(open) {
+        header.dataset.menuOpen = String(open);
+        toggle.setAttribute("aria-expanded", String(open));
+        if (open) {
+          previousBodyOverflow = body.style.overflow;
+          body.style.overflow = "hidden";
+          if (backdrop) backdrop.setAttribute("aria-hidden", "false");
+        } else {
+          body.style.overflow = previousBodyOverflow;
+          if (backdrop) backdrop.setAttribute("aria-hidden", "true");
+        }
+      }
+
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          const isOpen = header.dataset.menuOpen === "true";
+          setMenu(!isOpen);
+        });
+        if (backdrop) backdrop.addEventListener("click", () => setMenu(false));
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && header.dataset.menuOpen === "true") setMenu(false);
+        });
+        document.addEventListener("click", (e) => {
+          const isInsideHeader = e.target.closest(".site-header");
+          if (!isInsideHeader && header.dataset.menuOpen === "true") setMenu(false);
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"], a[href^="index.html#"]').forEach((a) => {
+        a.addEventListener("click", () => {
+          if (window.innerWidth <= 900) setMenu(false);
+        });
+      });
+
+      function syncCartPage() {
+        if (!window.BBNCart) return;
+        BBNCart.updateBadge();
+        BBNCart.render("cartPageItems", { onChange: syncCartPage });
+        const totalEl = document.getElementById("cartPageTotal");
+        const countEl = document.getElementById("cartPageCount");
+        const labelEl = document.getElementById("cartPageCountLabel");
+        const n = BBNCart.getCount();
+        if (totalEl) totalEl.textContent = BBNCart.formatPrice(BBNCart.getTotal());
+        if (countEl) countEl.textContent = String(n);
+        if (labelEl) labelEl.textContent = n === 1 ? " artículo" : " artículos";
+      }
+
+      window.addEventListener("bbn-cart-updated", syncCartPage);
+      syncCartPage();
+
+      const prefersReducedMotion =
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        $$(".reveal").forEach((el) => obs.observe(el));
+      } else {
+        $$(".reveal").forEach((el) => el.classList.add("visible"));
+      }
+
+      const year = document.getElementById("year");
+      if (year) year.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
