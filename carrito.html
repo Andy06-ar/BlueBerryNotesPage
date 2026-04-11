@@ -168,6 +168,15 @@
                 <span>Total</span>
                 <strong id="cartPageTotal">$0.00</strong>
               </div>
+              <button
+                type="button"
+                id="checkoutBtn"
+                class="checkout-button"
+                disabled
+                aria-disabled="true"
+              >
+                Finalizar compra
+              </button>
               <div class="cart-page-actions">
                 <a class="primary-button" href="index.html#productos">Seguir comprando</a>
                 <a class="ghost-button" href="index.html#politicas">Políticas</a>
@@ -331,6 +340,33 @@
       </div>
     </footer>
 
+    <div
+      id="checkoutFeedback"
+      class="checkout-feedback"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="checkoutFeedbackTitle"
+    >
+      <div class="checkout-feedback-card">
+        <div class="checkout-feedback-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="none">
+            <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="1.5" opacity="0.35" />
+            <path
+              d="M8 12.5l2.5 2.5L16 9"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <p id="checkoutFeedbackTitle" class="checkout-feedback-title">Proceso de compra simulado</p>
+        <p class="checkout-feedback-sub muted">No se ha realizado ningún cargo real.</p>
+        <button type="button" class="checkout-feedback-close ghost-button">Entendido</button>
+      </div>
+    </div>
+
     <script src="js/cart.js"></script>
     <script>
       const $ = (sel) => document.querySelector(sel);
@@ -377,6 +413,44 @@
         });
       });
 
+      const checkoutBtn = document.getElementById("checkoutBtn");
+      const checkoutFeedback = document.getElementById("checkoutFeedback");
+      let checkoutFeedbackTimer = null;
+
+      function setCheckoutButtonState(n) {
+        if (!checkoutBtn) return;
+        const empty = n === 0;
+        checkoutBtn.disabled = empty;
+        checkoutBtn.setAttribute("aria-disabled", empty ? "true" : "false");
+      }
+
+      function closeCheckoutFeedback() {
+        if (!checkoutFeedback) return;
+        checkoutFeedback.classList.remove("checkout-feedback--visible");
+        checkoutFeedback.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        if (checkoutFeedbackTimer) {
+          window.clearTimeout(checkoutFeedbackTimer);
+          checkoutFeedbackTimer = null;
+        }
+      }
+
+      function openCheckoutFeedback() {
+        if (!checkoutFeedback) return;
+        checkoutFeedback.classList.add("checkout-feedback--visible");
+        checkoutFeedback.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        const closeBtn = checkoutFeedback.querySelector(".checkout-feedback-close");
+        if (closeBtn) closeBtn.focus();
+        if (checkoutFeedbackTimer) window.clearTimeout(checkoutFeedbackTimer);
+        const prefersReduced =
+          window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        checkoutFeedbackTimer = window.setTimeout(
+          () => closeCheckoutFeedback(),
+          prefersReduced ? 3200 : 2800
+        );
+      }
+
       function syncCartPage() {
         if (!window.BBNCart) return;
         BBNCart.updateBadge();
@@ -388,6 +462,28 @@
         if (totalEl) totalEl.textContent = BBNCart.formatPrice(BBNCart.getTotal());
         if (countEl) countEl.textContent = String(n);
         if (labelEl) labelEl.textContent = n === 1 ? " artículo" : " artículos";
+        setCheckoutButtonState(n);
+      }
+
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener("click", () => {
+          if (!window.BBNCart || BBNCart.getCount() === 0) return;
+          openCheckoutFeedback();
+        });
+      }
+
+      if (checkoutFeedback) {
+        checkoutFeedback.addEventListener("click", (e) => {
+          if (e.target === checkoutFeedback) closeCheckoutFeedback();
+        });
+        checkoutFeedback.querySelector(".checkout-feedback-close")?.addEventListener("click", () => {
+          closeCheckoutFeedback();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && checkoutFeedback.classList.contains("checkout-feedback--visible")) {
+            closeCheckoutFeedback();
+          }
+        });
       }
 
       window.addEventListener("bbn-cart-updated", syncCartPage);
